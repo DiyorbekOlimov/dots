@@ -22,8 +22,6 @@ curl -fsSL https://raw.githubusercontent.com/DiyorbekOlimov/dots/master/install.
 
 ### Manual installation
 
-#### Install dependencies
-
 - Install everything described above
 - Copy contents of `.config` directory to `~/.config`
 - Copy `.zshrc` to home folder
