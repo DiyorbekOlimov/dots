@@ -1,7 +1,7 @@
 REPOSITORY_URL="https://github.com/DiyorbekOlimov/dotfiles"
 
 FOLDER_NAME="diyorbeks-dotfiles"
-CACHE_DIRECTORY="~/.cache/"
+CACHE_DIRECTORY="$HOME/.cache/"
 TEMP_PATH="$CACHE_DIRECTORY$FOLDER_NAME"
 
 function aur_install() {
