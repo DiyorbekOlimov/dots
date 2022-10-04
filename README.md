@@ -10,18 +10,15 @@
 - zsh - Shell
 - rofi - Application Launcher
 - dunst - Notification Daemon
-- neofetch (optional) - System Information
+- neofetch - System Information
+----
+- JetBrains Mono NerdFont - Terminal Font
 
 ## Installation
 
-### Automatic installation (Arch linux users)
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/DiyorbekOlimov/dots/master/install.sh | sh
-```
-
-### Manual installation
-
 - Install everything described above
+```sh
+paru -S bspwm sxhkd polybar alacritty zsh rofi dunst nerd-fonts-jetbrains-mono
+```
 - Copy contents of `.config` directory to `~/.config`
 - Copy `.zshrc` to home folder
