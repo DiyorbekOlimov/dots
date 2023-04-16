@@ -1,0 +1,125 @@
+(defwidget music_dash []
+  (box
+    :class "music"
+    :height 150
+    :valign "start"
+    :orientation "v"
+    :space-evenly false
+    (box
+      :class "header"
+      :halign "start"
+      (label :text "mpd")
+    )
+    (box
+      :class "content"
+      :space-evenly false
+      (box
+        :class "cover"
+        :valign "start"
+        (image
+          :path {replace(music_cover, "file://", "")}
+          :image-width "96"
+        )
+      )
+      (box
+        :orientation "v"
+        :space-evenly false
+        :width 228
+        (label
+          :class "title"
+          :text music_title
+          :limit-width 20
+          :show-truncated true
+          :halign "start"
+        )
+        (label
+          :class "artist"
+          :text music_artist
+          :limit-width 20
+          :show-truncated true
+          :halign "start"
+        )
+        (box
+          :class "controls"
+          :space-evenly false
+          :halign "center"
+          (button :onclick "playerctl previous" "󰒮")
+          (button :onclick "playerctl play-pause" {music_state=="Playing" ? "󰏤" : "󰐊"})
+          (button :onclick "playerctl next" "󰒭")
+        )
+      )
+    )
+  )
+)
+
+(defwidget notifications []
+  (box
+    :class "notifications"
+    :space-evenly false
+    :orientation "v"
+    (for notification_ in notifications_
+      (notification
+        :app {notification_.app}
+        :icon {notification_.icon}
+        :title {notification_.summary}
+        :body {notification_.body}
+        :uuid {notification_.uuid}
+      )
+    )
+  )
+)
+
+(defwidget notification [?app icon title body uuid]
+  (box
+    :class "notification"
+    :space-evenly false
+    :height 150
+    :orientation "v"
+    (box
+      :class "header"
+      (box
+        :halign "start"
+        (label :text app)
+      )
+      (box
+        :halign "end"
+        (button
+          :class "notification-close"
+          :onclick "~/.scripts/notifications.py close ${uuid}"
+          "󰅖"
+        )
+      )
+    )
+    (box
+      :class "content"
+      :space-evenly false
+      (box
+        :class "icon"
+        :valign "start"
+        (image
+          :path {replace(icon, "file://", "")}
+          :image-width "80"
+        )
+      )
+      (box
+        :orientation "v"
+        :space-evenly false
+        :width 228
+        (label
+          :class "title"
+          :text title
+          :limit-width 20
+          :show-truncated true
+          :halign "start"
+        )
+        (label
+          :class "body"
+          :text body
+          :limit-width 50
+          :show-truncated true
+          :halign "start"
+        )
+      )
+    )
+  )
+)

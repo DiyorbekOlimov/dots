@@ -1,5 +1,13 @@
 PATH=$PATH:~/.local/bin
 
-export ANDROID_SDK_ROOT=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+export PNPM_HOME="/home/diyorbek/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+export CARGO_INSTALL_ROOT="$HOME/.cargo/bin/"
+export PATH="$CARGO_INSTALL_ROOT:$PATH"

@@ -1,0 +1,34 @@
+(defwidget center_box []
+  (box
+    :class "center"
+    :halign "center"
+    (music)
+  )
+)
+
+(defwidget music []
+  (eventbox
+    :class "music"
+    :onhover "eww update music_control=true"
+    :onhoverlost "eww update music_control=false"
+    (box :space-evenly false
+      (label
+        :text music_title
+        :tooltip "by ${music_artist}"
+        :limit-width 30
+        :show-truncated true
+      )
+      (revealer
+        :class "control"
+        :reveal music_control
+        :transition "slideright"
+        :duration ".5s"
+        (box
+          (button :onclick "playerctl previous" "玲")
+          (button :onclick "playerctl play-pause" {music_state=="Playing" ? "" : "契"})
+          (button :onclick "playerctl next" "怜")
+        )
+      )
+    )
+  )
+)

@@ -1,0 +1,90 @@
+.dashboard {
+  background: #263238;
+  font-size: 16px;
+}
+
+.dashboard_elements {
+  padding: 16px;
+
+  .music {
+    box-shadow: 1px 1px 5px 1px #212121;
+    border-radius: 10px;
+    padding: 8px 16px;
+    background: $bg_light;
+
+    .header {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .content {
+      .cover {
+        margin-right: 12px;
+      }
+
+      .title {
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .artist {
+        font-weight: 200;
+      }
+
+      .controls {
+        margin-top: 12px;
+
+        button {
+          background: $bg_light;
+          margin: 0 10px;
+          padding: 2px 8px;
+          box-shadow: 1px 1px 3px 1px #212121;
+        }
+
+        button:hover {
+          background: $fg;
+          color: $bg;
+        }
+      }
+    }
+  }
+}
+
+.notifications {
+  .notification {
+    margin-top: 16px;
+    box-shadow: 1px 1px 5px 1px #212121;
+    border-radius: 10px;
+    padding: 8px 16px;
+    background: $bg_light;
+
+    .header {
+      font-size: 15px;
+      margin-bottom: 4px;
+
+      .notification-close {
+        padding: 0 6px;
+        box-shadow: 1px 1px 3px 1px #363636;
+      }
+    }
+
+    .content {
+      .icon {
+        margin-right: 12px;
+      }
+
+      .title {
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .body {
+        font-weight: 200;
+      }
+    }
+  }
+}
+
+.notification_popup {
+  background: none;
+}

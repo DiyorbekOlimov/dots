@@ -6,3 +6,7 @@ source $ZSH_CONFIG_DIR/path
 
 source $ZSH_CONFIG_DIR/completions/init
 source $ZSH_CONFIG_DIR/autosuggestions.zsh
+source $ZSH_CONFIG_DIR/fsh/fast-syntax-highlighting.plugin.zsh
+
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"

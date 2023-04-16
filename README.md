@@ -1,16 +1,15 @@
 # bspwm dotfiles
 
-![image](https://user-images.githubusercontent.com/77888898/190707379-f1b3aea7-79b0-43b0-b324-3fccb198019a.png)
+![image](https://user-images.githubusercontent.com/77888898/232312657-032a96d5-fec9-43b8-99f0-72986dc2e514.png)
 
 ## What's in?
 - bspwm - Window Manager
 - sxhkd - Shortcut Manager
-- polybar - Status Bar
 - alacritty - Terminal Emulator
 - zsh - Shell
 - rofi - Application Launcher
-- dunst - Notification Daemon
-- neofetch - System Information
+- eww - Status Bar / Dashboard / Notification
+- dunst - Notification Daemon (bridge for eww widget)
 ----
 - JetBrains Mono NerdFont - Terminal Font
 
@@ -18,7 +17,9 @@
 
 - Install everything described above
 ```sh
-paru -S bspwm sxhkd polybar alacritty zsh rofi dunst nerd-fonts-jetbrains-mono
+paru -S bspwm sxhkd alacritty zsh rofi dunst pueue eww nerd-fonts-jetbrains-mono
 ```
 - Copy contents of `.config` directory to `~/.config`
+- Copy contents of `.scripts` directory to `~/.scripts`
 - Copy `.zshrc` to home folder
+- Start the `pueued` user service. `systemctl --user start pueued.service`

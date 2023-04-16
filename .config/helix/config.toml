@@ -1,0 +1,18 @@
+theme = "dracula_custom"
+
+[editor]
+mouse = false
+cursorline = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+max-depth = 2
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "none"

@@ -1,0 +1,39 @@
+(defwidget left_box []
+  (box
+    :class "left"
+    :halign "start"
+    :space-evenly false
+    (workspaces)
+    (window_title)
+  )
+)
+
+
+(defwidget workspaces []
+  (eventbox
+    :onscroll "[ {} = up ] && bspc desktop -f next; [ {} = down ] && bspc desktop -f prev;"
+    (box :class "workspaces" :spacing 2
+      (button :onclick "bspc desktop -f ${workspaces[0]['name']}" :class {workspaces[0]['class']} {workspaces[0]['name']})
+      (button :onclick "bspc desktop -f ${workspaces[1]['name']}" :class {workspaces[1]['class']} {workspaces[1]['name']})
+      (button :onclick "bspc desktop -f ${workspaces[2]['name']}" :class {workspaces[2]['class']} {workspaces[2]['name']})
+      (button :onclick "bspc desktop -f ${workspaces[3]['name']}" :class {workspaces[3]['class']} {workspaces[3]['name']})
+      (button :onclick "bspc desktop -f ${workspaces[4]['name']}" :class {workspaces[4]['class']} {workspaces[4]['name']})
+      (button :onclick "bspc desktop -f ${workspaces[5]['name']}" :class {workspaces[5]['class']} {workspaces[5]['name']})
+      (button :onclick "bspc desktop -f ${workspaces[6]['name']}" :class {workspaces[6]['class']} {workspaces[6]['name']})
+      (button :onclick "bspc desktop -f ${workspaces[7]['name']}" :class {workspaces[7]['class']} {workspaces[7]['name']})
+      (button :onclick "bspc desktop -f ${workspaces[8]['name']}" :class {workspaces[8]['class']} {workspaces[8]['name']})
+      (button :onclick "bspc desktop -f ${workspaces[9]['name']}" :class {workspaces[9]['class']} {workspaces[9]['name']})
+    )
+  )
+)
+
+
+(defwidget window_title []
+  (box :class "window-title"
+    (label
+      :text window_title
+      :limit-width 30
+      :show-truncated true
+    )
+  )
+)

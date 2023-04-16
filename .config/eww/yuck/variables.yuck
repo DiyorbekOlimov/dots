@@ -1,0 +1,43 @@
+; Left
+
+(defpoll workspaces :interval ".1s" "~/.config/eww/scripts/workspaces.py")
+
+(defpoll window_title :interval ".1s" :initial "" "xdotool getwindowfocus getwindowname")
+
+
+; Center
+
+(deflisten music_title :initial "Not playing" "playerctl --follow metadata --format {{title}}")
+
+(deflisten music_artist "playerctl --follow metadata --format {{artist}}")
+
+(deflisten music_cover "playerctl --follow metadata --format {{mpris:artUrl}}")
+
+(deflisten music_state "playerctl --follow status")
+
+(defvar music_control false)
+
+
+; Right
+
+(defpoll microphone :interval "1s" "~/.config/eww/scripts/microphone.sh -g")
+(defpoll microphone_class :interval "1s" "~/.config/eww/scripts/microphone.sh -c")
+
+(defpoll volume :interval "1s" "~/.config/eww/scripts/volume.sh -g")
+(defpoll volume_class :interval "1s" "~/.config/eww/scripts/volume.sh -c")
+
+(defpoll brightness_current :interval "1s" "~/.config/eww/scripts/brightness.sh -g")
+
+(defpoll battery :interval "1s" "./scripts/battery.sh")
+
+(defpoll battery_class :interval "1s" "./scripts/battery.sh -c")
+
+(defpoll wifi :interval "5s" "~/.config/eww/scripts/wifi.sh")
+
+(defpoll time :interval "1s" "date +%H:%M")
+
+(defvar tray_icon "")
+
+
+
+(defvar notifications_ "[]")

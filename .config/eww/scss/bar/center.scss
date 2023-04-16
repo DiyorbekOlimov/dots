@@ -1,0 +1,20 @@
+.center .music {
+  background-color: $bg_light;
+  border-radius: 6px;
+
+  label {
+    padding: 0 8px;
+    font-size: 15px;
+    margin: 0 2px;
+  }
+
+  .control box {
+    margin: 0 2px;
+    border-left: 1px solid $bg_dark;
+
+    button {
+      font-size: 16px;
+      border-radius: 0;
+    }
+  }
+}

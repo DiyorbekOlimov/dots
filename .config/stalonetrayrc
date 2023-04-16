@@ -1,0 +1,6 @@
+background "#282A2E"
+geometry 1x1-16+48
+grow_gravity NE
+icon_gravity NW
+slot_size 24
+window_type dock

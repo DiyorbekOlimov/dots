@@ -1,0 +1,17 @@
+@import "./scss/colors.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  min-width: unset;
+  min-height: unset;
+}
+
+window {
+  font-size: 14px;
+  color: $fg;
+  font-family: 'JetBrainsMono Nerd Font';
+}
+
+@import "./scss/bar/init.scss";
+@import "./scss/dashboard/init.scss";

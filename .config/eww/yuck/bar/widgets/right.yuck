@@ -1,0 +1,98 @@
+(defwidget right_box []
+  (box
+    :class "right"
+    :halign "end"
+    :spacing 2
+    :space-evenly false
+    (microphone)
+    (volume)
+    (brightness)
+    (battery)
+    (wifi)
+    (time)
+    (tray)
+    (dashboard_btn)
+  )
+)
+
+
+
+(defwidget microphone []
+  (eventbox
+    :class "microphone ${microphone_class}"
+    :onclick "~/.config/eww/scripts/microphone.sh -t"
+    :onscroll "~/.config/eww/scripts/microphone.sh -s {}"
+    (label
+      :text microphone
+    )
+  )
+)
+
+
+(defwidget volume []
+  (eventbox
+    :class "volume ${volume_class}"
+    :onclick "~/.config/eww/scripts/volume.sh -t"
+    :onscroll "~/.config/eww/scripts/volume.sh -s {}"
+    (label
+      :text volume
+    )
+  )
+)
+
+
+(defwidget brightness []
+  (eventbox
+    :class "brightness yellow"
+    :onclick "~/.config/eww/scripts/brightness.sh -d"
+    :onscroll "~/.config/eww/scripts/brightness.sh -s {}"
+    (label
+      :text brightness_current
+    )
+  )
+)
+
+
+(defwidget battery []
+  (box :class "battery ${battery_class}"
+    (label
+      :text {battery}
+    )
+  )
+)
+
+
+(defwidget wifi []
+  (box :class "wifi teal"
+    (label
+      :text {wifi}
+    )
+  )
+)
+
+
+(defwidget time []
+  (box :class "time blue"
+    (label
+      :text {time}
+    )
+  )
+)
+
+(defwidget tray []
+  (box :class "tray"
+    (button
+      :onclick "~/.config/eww/scripts/tray.sh"
+      {tray_icon}
+    )
+  )
+)
+
+(defwidget dashboard_btn []
+  (box :class "dashboard_btn"
+    (button
+      :onclick "~/.config/eww/scripts/queue.sh dashboard new"
+      ""
+    )
+  )
+)

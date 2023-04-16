@@ -1,0 +1,54 @@
+(include "./yuck/dashboard/widgets.yuck")
+
+
+(defwindow dashboard
+  :class "dashboard"
+  :monitor 0
+  :geometry 
+    (geometry
+      :x "0"
+      :y "32px"
+      :width "400px"
+      :height "1048px"
+      :anchor "right top"
+    )
+  :stacking "fg"
+  :windowtype "dock"
+  :wm-ignore false
+  (dashboard_elements)
+)
+
+(defwidget dashboard_elements []
+  (eventbox
+    :onhover "~/.config/eww/scripts/queue.sh dashboard keep"
+    :onhoverlost "~/.config/eww/scripts/queue.sh dashboard lost"
+    (box
+      :orientation "v"
+      :space-evenly false
+      :class "dashboard_elements"
+      (music_dash)
+      (notifications)
+    )
+  )
+)
+
+
+(defwindow notification_popup
+  :class "notification-popup"
+  :monitor 0
+  :geometry
+    (geometry
+      :x "-16px"
+      :y "48px"
+      :width "368px"
+      :anchor "right top"
+    )
+    :stacking "fg"
+    :windowtype "dock"
+    :wm-ignore false
+    (eventbox
+      :onhover "~/.config/eww/scripts/queue.sh notification keep"
+      :onhoverlost "~/.config/eww/scripts/queue.sh notification lost"
+      (notifications)
+    )
+)

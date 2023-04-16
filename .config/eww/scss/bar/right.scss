@@ -1,0 +1,63 @@
+.bar .right>* {
+  font-weight: bold;
+  background-color: $bg_light;
+  border-radius: 6px;
+  font-size: 16px;
+  margin: 0 1px;
+}
+
+.bar .right {
+  .microphone {
+    label {
+      padding: 2px 8px;
+    }
+  }
+
+  .volume {
+    label {
+      padding: 2px 8px;
+    }
+  }
+
+  .brightness {
+    label {
+      padding: 2px 8px;
+    }
+  }
+
+  .battery {
+    padding: 2px 8px;
+  }
+
+  .wifi {
+    label {
+      padding: 2px 8px;
+    }
+  }
+
+  .time {
+    label {
+      padding: 2px 8px;
+    }
+  }
+
+  .notification {
+    label {
+      padding: 2px 8px;
+    }
+  }
+
+  .tray {
+    button {
+      color: $fg_secondary;
+      padding: 2px 8px;
+    }
+  }
+
+  .dashboard_btn {
+    button {
+      padding: 2px;
+      margin-right: -2px;
+    }
+  }
+}
